@@ -3,9 +3,10 @@ import Styles from "./home.module.css";
 import { CiFilter } from "react-icons/ci";
 import { debounce } from "lodash";
 import { ProductContainer } from "../../Components/ProductContainer/productContainer.jsx";
+import { Header } from "../../Components/PageHeader/pageHeader.jsx";
 
 export const Home = () => {
-  const [pageHeaderData, setPageHeaderData] = useState([]);
+ 
   const [vibeImgUrl, setVibeImgUrl] = useState("");
   const [totalStoredProductIdsCount, setTotalStoredProductIdsCount] =
     useState(0);
@@ -34,14 +35,7 @@ export const Home = () => {
       })
       .catch((error) => console.error("Error:", error));
   };
-  useEffect(() => {
-    fetch(
-      "https://api.furrl.in/api/v1/pageConfiguration/vibe_result_page_header"
-    )
-      .then((data) => data.json())
-      .then((resp) => setPageHeaderData(resp?.widgets))
-      .catch((err) => console.log(err));
-  }, []);
+ 
 
   useEffect(() => {
     fetchData(page).then(
@@ -107,16 +101,7 @@ export const Home = () => {
 
   return (
     <div className={Styles.homeContainer}>
-      <div>
-        {pageHeaderData?.map((ele, index) => {
-          return (
-            <img
-              src={ele?.background_image?.url}
-              className={Styles.imgContainer}
-            />
-          );
-        })}
-      </div>
+      <Header/>
       <div className={Styles.vibeImgContainer}>
         <img src={vibeImgUrl} className={Styles.vibeImg} />
       </div>
