@@ -1,0 +1,64 @@
+.homeContainer {
+  width: 100%;
+}
+.imgContainer {
+  width: 100%;
+}
+.vibeImgContainer {
+  width: 100%;
+  height: fit-content;
+}
+.vibeImg {
+  width: 100%;
+  height: 200px;
+}
+.productLabelContainer {
+  background-color: #ebeef3;
+  border-radius: 10px;
+  margin: 6px 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+.productLabel {
+  background-color: white;
+  padding: 10px;
+  margin: 0px;
+  width: 30%;
+  border-radius: 10px;
+}
+.totalProductsCount {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin: 0px 12px;
+}
+.categoryContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow-x: auto;
+  overflow-y: hidden;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  width: 90%;
+  gap: 12px;
+  padding: 10px;
+}
+.categoryContainer::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+
+.categoryLabel {
+  border: 1px solid rgb(218, 212, 212);
+  border-radius: 20px;
+  padding: 10px;
+  text-align: center;
+}
+.categoryLabel:hover {
+  background-color: rgb(76, 76, 159);
+  color: white;
+}
