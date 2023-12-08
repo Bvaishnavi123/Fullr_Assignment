@@ -15,6 +15,12 @@
   font-size: 14px;
   margin: 2px;
 }
+.detailsMainContainer{
+  border: 1px solid;
+  margin-bottom: 60px;
+  min-height: 100vh; /* Ensure a minimum height for scrolling */
+  box-sizing: border-box; /* Include padding and borders in the total width/height */
+}
 
 .comparePrice,
 .discount {
@@ -54,11 +60,14 @@
   margin: 3px;
 }
 .addToBagContainer {
-  background-color: #fbf5ff;
-  text-align: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
   padding: 10px;
-
-
+  box-shadow: 0px -5px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000; /* Adjust the z-index value as needed */
 }
 .addTobagbtn {
   width: 100%;
@@ -72,4 +81,5 @@
   justify-content: center;
   gap: 10px;
   cursor: pointer;
+  
 }

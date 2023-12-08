@@ -3,6 +3,8 @@ import { Header } from "../../Components/PageHeader/pageHeader.jsx";
 import { FaBoxOpen } from "react-icons/fa";
 import { FaTruck } from "react-icons/fa";
 import { RiHandbagLine } from "react-icons/ri";
+import { FaRegLightbulb } from "react-icons/fa";
+
 import axios from "axios";
 
 
@@ -11,6 +13,7 @@ import { useEffect, useState } from "react";
 export const ProductDetail = () => {
   const [showProductDes, setProductDes] = useState(false);
   const [showDelivery, setShowDelivery] = useState(false);
+  const [returnPolicy , setReturnPolicy] = useState(false)
   const [productsDetailData,setproductsDetailData] = useState({})
   useEffect(()=>{
     const reqBody = {
@@ -90,6 +93,20 @@ export const ProductDetail = () => {
                   placeholder="Enter Pincode"
                 />
               </div>
+            ) : null}
+          </div>
+          <div className={Styles.productDesBtnContainer}>
+            <button
+              className={Styles.productDesBtn}
+              onClick={() => setReturnPolicy(!returnPolicy)}
+            >
+              <FaRegLightbulb fontSize={"20px"} />
+              {productsDetailData?.data?.returnPolicy?.title}
+            </button>
+            {returnPolicy ? (
+              <p style={{"fontSize":"14px"}}>
+                {productsDetailData?.data?.returnPolicy?.description}
+              </p>
             ) : null}
           </div>
         </div>
