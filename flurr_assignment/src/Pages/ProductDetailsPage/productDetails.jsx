@@ -1,19 +1,33 @@
-import { useSelector } from "react-redux";
 import Styles from "./productDetails.module.css";
 import { Header } from "../../Components/PageHeader/pageHeader.jsx";
 import { FaBoxOpen } from "react-icons/fa";
 import { FaTruck } from "react-icons/fa";
 import { RiHandbagLine } from "react-icons/ri";
+import axios from "axios";
 
-import { useState } from "react";
+
+import { useEffect, useState } from "react";
 
 export const ProductDetail = () => {
   const [showProductDes, setProductDes] = useState(false);
   const [showDelivery, setShowDelivery] = useState(false);
-  const productsDetailData = useSelector(
-    (store) => store?.ProductReducer?.productsDetailData
-  );
-  console.log(productsDetailData);
+  const [productsDetailData,setproductsDetailData] = useState({})
+  useEffect(()=>{
+    const reqBody = {
+      id: localStorage.getItem('id')
+    };
+    axios
+      .post("https://api.furrl.in/api/v1/product/getProductDetail", reqBody, {
+        method: "POST",
+      })
+      .then((resp) => {
+   
+        setproductsDetailData(resp?.data)
+       
+      })
+      .catch((err) => console.log(err));
+
+  },[])
 
   return (
     <>
