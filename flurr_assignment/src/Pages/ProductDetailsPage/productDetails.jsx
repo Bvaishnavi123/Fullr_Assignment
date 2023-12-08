@@ -6,7 +6,7 @@ import { RiHandbagLine } from "react-icons/ri";
 import { FaRegLightbulb } from "react-icons/fa";
 
 import axios from "axios";
-
+import { useParams } from 'react-router-dom';
 
 import { useEffect, useState } from "react";
 
@@ -15,9 +15,10 @@ export const ProductDetail = () => {
   const [showDelivery, setShowDelivery] = useState(false);
   const [returnPolicy , setReturnPolicy] = useState(false)
   const [productsDetailData,setproductsDetailData] = useState({})
+  const { id } = useParams();
   useEffect(()=>{
     const reqBody = {
-      id: localStorage.getItem('id')
+      id: id || localStorage.getItem('id')
     };
     axios
       .post("https://api.furrl.in/api/v1/product/getProductDetail", reqBody, {

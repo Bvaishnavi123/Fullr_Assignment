@@ -1,12 +1,15 @@
 import Styles from "./productContainer.module.css";
 import { useNavigate } from "react-router-dom";
+import { IoShare } from "react-icons/io5";
+
 export const ProductContainer = ({ data }) => {
   const navigate = useNavigate();
 
   const handleProductClick = (ele) => {
     localStorage.setItem("id", ele?.id);
-    navigate("/product-details");
+    navigate(`/product-details/${ele?.id}`);
   };
+ 
   return (
     <div className={Styles.ProductContainer}>
       {data?.map((ele, index) => {
@@ -17,8 +20,9 @@ export const ProductContainer = ({ data }) => {
             onClick={() => handleProductClick(ele)}
           >
             <img src={ele?.images[0].src} className={Styles.singleImg} />
+            <IoShare className={Styles.shareIcon} />
 
-            <div className={Styles.detailsContainer}>
+            <div className={Styles.detailsContainer} >
               <p className={Styles.brandName}>{ele?.brandName}</p>
               <p>{ele?.title}</p>
               <p>
