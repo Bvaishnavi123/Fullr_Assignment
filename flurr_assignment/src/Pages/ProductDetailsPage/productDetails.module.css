@@ -1,15 +1,73 @@
 .singleImg {
-    width: 100%;
-    height: 400px;
-  }
-
-  .detailsContainer{
-    text-align: left;
-    padding: 10px;
-}
-.detailsContainer > p{
-    margin: 2px;
-    font-size: 18px;
-    color: #B29DED;
+  width: 100%;
+  height: 400px;
 }
 
+.detailsContainer {
+  text-align: left;
+  padding: 10px;
+}
+
+.detailsContainer > p {
+  margin: 2px;
+  font-size: 14px;
+  margin: 2px;
+}
+
+.comparePrice,
+.discount {
+  color: #a98ff2;
+}
+.comparePrice {
+  text-decoration: line-through;
+}
+.productDesBtnContainer {
+  padding: 5px;
+  
+}
+.productDesBtn {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  text-align: left;
+  background-color: rgb(255, 255, 255);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.productDesBtn:hover {
+  background-color: gainsboro;
+}
+.deliveryDes {
+  margin: 2px;
+  color: #afabab;
+}
+.pincodeInput {
+  width: 90%;
+  padding: 10px;
+}
+.lowestPricelabel {
+  color: #562799;
+  margin: 3px;
+}
+.addToBagContainer {
+  background-color: #fbf5ff;
+  text-align: center;
+  padding: 10px;
+
+
+}
+.addTobagbtn {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  background-color: #7e59e7;
+  color: rgb(255, 255, 255);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+}

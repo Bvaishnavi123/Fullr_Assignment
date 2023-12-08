@@ -4,6 +4,7 @@
     align-items: center;
     padding: 4px 10px;
     border: 1px solid rgb(220, 220, 220);
+    
 }
 .iconContainer{
     display: flex;
